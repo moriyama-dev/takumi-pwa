@@ -1,0 +1,181 @@
+/* Takumi PWA settings screen. */
+
+.tkpwa .tkpwa-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 16px 20px;
+	margin: 16px 0;
+	max-width: 1100px;
+	box-sizing: border-box;
+}
+
+.tkpwa .tkpwa-card h2 {
+	margin: 0 0 12px;
+	font-size: 1.2em;
+}
+
+.tkpwa-top {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 280px;
+	gap: 16px;
+	max-width: 1100px;
+}
+
+.tkpwa-top .tkpwa-card {
+	margin: 16px 0 0;
+}
+
+@media screen and (max-width: 960px) {
+	.tkpwa-top {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* ---------- Status ---------- */
+
+.tkpwa-checks {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 12px;
+}
+
+.tkpwa-checks th,
+.tkpwa-checks td {
+	padding: 10px 8px;
+	border-top: 1px solid #f0f0f1;
+	text-align: left;
+	vertical-align: top;
+}
+
+.tkpwa-checks tr:first-child th,
+.tkpwa-checks tr:first-child td {
+	border-top: 0;
+}
+
+.tkpwa-checks th {
+	width: 30%;
+	font-weight: 600;
+}
+
+.tkpwa-checks td:nth-child(2) {
+	width: 1%;
+	white-space: nowrap;
+}
+
+.tkpwa-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.6;
+}
+
+.tkpwa-badge--ok {
+	background: #edfaef;
+	color: #00680a;
+}
+
+.tkpwa-badge--warn {
+	background: #fcf9e8;
+	color: #8a5a00;
+}
+
+.tkpwa-badge--fail {
+	background: #fcf0f1;
+	color: #b32d2e;
+}
+
+.tkpwa-badge--info {
+	background: #f0f6fc;
+	color: #0a4b78;
+}
+
+/* ---------- QR ---------- */
+
+.tkpwa-qr__code canvas {
+	display: block;
+	width: 100%;
+	max-width: 220px;
+	height: auto;
+	margin: 0 auto;
+	image-rendering: pixelated;
+}
+
+.tkpwa-qr__url {
+	text-align: center;
+	word-break: break-all;
+}
+
+.tkpwa-qr__download {
+	display: block !important;
+	margin: 0 auto !important;
+}
+
+/* ---------- Icon ---------- */
+
+.tkpwa-icon {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+}
+
+.tkpwa-icon__preview {
+	flex: none;
+	border-radius: 16px;
+	border: 1px solid #dcdcde;
+	background: #f6f7f7;
+}
+
+.tkpwa-icon__reset {
+	margin-left: 8px !important;
+}
+
+/* ---------- Toggles ---------- */
+
+.tkpwa-toggles {
+	display: grid;
+	gap: 4px;
+}
+
+.tkpwa-toggle {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	padding: 10px 0;
+	border-top: 1px solid #f0f0f1;
+}
+
+.tkpwa-toggle:first-child {
+	border-top: 0;
+}
+
+.tkpwa-toggle input {
+	margin-top: 3px;
+}
+
+.tkpwa-toggle label {
+	display: grid;
+	gap: 2px;
+}
+
+.tkpwa-toggle label span {
+	color: #50575e;
+}
+
+.tkpwa-toggle.is-disabled label {
+	color: #8c8f94;
+}
+
+/* ---------- Advanced ---------- */
+
+.tkpwa-advanced summary {
+	cursor: pointer;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.tkpwa-advanced[open] summary {
+	margin-bottom: 8px;
+}

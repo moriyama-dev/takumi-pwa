@@ -1,0 +1,491 @@
+# Copyright (C) 2026 Yoshiro Moriyama (Takumi Web Services)
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Takumi PWA 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/takumi-pwa\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-14T15:46:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: takumi-pwa\n"
+
+#. Plugin Name of the plugin
+#: takumi-pwa.php
+#: admin/views/settings.php:47
+#: includes/class-tkpwa-admin.php:37
+#: includes/class-tkpwa-admin.php:38
+msgid "Takumi PWA"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: takumi-pwa.php
+msgid "https://github.com/moriyama-dev/takumi-pwa"
+msgstr ""
+
+#. Description of the plugin
+#: takumi-pwa.php
+msgid "Turn your WordPress site into an installable app with no setup. Manifest, service worker, offline support, install prompt and app-style navigation are generated from your existing site settings."
+msgstr ""
+
+#. Author of the plugin
+#: takumi-pwa.php
+msgid "Yoshiro Moriyama (Takumi Web Services)"
+msgstr ""
+
+#. Author URI of the plugin
+#: takumi-pwa.php
+msgid "https://takumi.ca"
+msgstr ""
+
+#: admin/views/settings.php:17
+msgid "OK"
+msgstr ""
+
+#: admin/views/settings.php:18
+msgid "Check"
+msgstr ""
+
+#: admin/views/settings.php:19
+msgid "Action needed"
+msgstr ""
+
+#: admin/views/settings.php:20
+msgid "Info"
+msgstr ""
+
+#: admin/views/settings.php:51
+msgid "Status"
+msgstr ""
+
+#: admin/views/settings.php:66
+msgid "Check again"
+msgstr ""
+
+#: admin/views/settings.php:71
+msgid "Install from a phone"
+msgstr ""
+
+#: admin/views/settings.php:72
+msgid "Scan to open the site on a phone, then add it to the home screen. Print it for your shop counter or flyers."
+msgstr ""
+
+#: admin/views/settings.php:75
+msgid "Download PNG"
+msgstr ""
+
+#: admin/views/settings.php:83
+msgid "App"
+msgstr ""
+
+#: admin/views/settings.php:84
+msgid "Leave a field empty to use your site settings. The grey text shows what is used now."
+msgstr ""
+
+#: admin/views/settings.php:88
+msgid "Icon"
+msgstr ""
+
+#: admin/views/settings.php:94
+msgid "Choose image"
+msgstr ""
+
+#: admin/views/settings.php:95
+msgid "Use Site Icon"
+msgstr ""
+
+#: admin/views/settings.php:96
+msgid "One square image of at least 512 x 512 pixels. Every size the phones need is made from it. Uses the Site Icon when none is chosen."
+msgstr ""
+
+#: admin/views/settings.php:102
+msgid "App name"
+msgstr ""
+
+#: admin/views/settings.php:106
+msgid "Name under the icon"
+msgstr ""
+
+#: admin/views/settings.php:109
+msgid "Home screens cut off names longer than about 12 characters."
+msgstr ""
+
+#: admin/views/settings.php:113
+msgid "Description"
+msgstr ""
+
+#: admin/views/settings.php:117
+msgid "Status bar color"
+msgstr ""
+
+#. translators: %s: hex color
+#: admin/views/settings.php:123
+#, php-format
+msgid "Empty uses your theme background (%s)."
+msgstr ""
+
+#: admin/views/settings.php:129
+msgid "Start screen color"
+msgstr ""
+
+#: admin/views/settings.php:133
+msgid "Window"
+msgstr ""
+
+#: admin/views/settings.php:136
+msgid "Like an app, without the address bar (recommended)"
+msgstr ""
+
+#: admin/views/settings.php:137
+msgid "With minimal browser controls"
+msgstr ""
+
+#: admin/views/settings.php:138
+msgid "Full screen, hiding the status bar"
+msgstr ""
+
+#: admin/views/settings.php:146
+msgid "App features"
+msgstr ""
+
+#: admin/views/settings.php:149
+msgid "Install banner"
+msgstr ""
+
+#: admin/views/settings.php:149
+msgid "Invites visitors to add the site to their home screen from their second visit. iPhone users get step-by-step instructions."
+msgstr ""
+
+#: admin/views/settings.php:150
+msgid "Loading screen"
+msgstr ""
+
+#: admin/views/settings.php:150
+msgid "Shows your icon while the next page loads, instead of a frozen screen."
+msgstr ""
+
+#: admin/views/settings.php:151
+msgid "Icon shortcuts"
+msgstr ""
+
+#: admin/views/settings.php:151
+msgid "Long-press the app icon to jump to your main pages. Taken from your menu."
+msgstr ""
+
+#: admin/views/settings.php:156
+msgid "Bottom navigation bar"
+msgstr ""
+
+#. translators: %s: where the links come from, e.g. Menu "Main"
+#: admin/views/settings.php:159
+#, php-format
+msgid "App-style tabs at the bottom of the screen, built from %s."
+msgstr ""
+
+#: admin/views/settings.php:160
+msgid "App-style tabs at the bottom of the screen. Create a menu first; none was found."
+msgstr ""
+
+#: admin/views/settings.php:162
+#: includes/class-tkpwa-frontend.php:85
+msgid "Pull to refresh"
+msgstr ""
+
+#: admin/views/settings.php:162
+msgid "Pull down at the top of a page to reload it, as in other apps."
+msgstr ""
+
+#: admin/views/settings.php:163
+msgid "Reading progress bar"
+msgstr ""
+
+#: admin/views/settings.php:163
+msgid "A thin line at the top that fills as the reader scrolls. Shown in the browser too."
+msgstr ""
+
+#: admin/views/settings.php:167
+msgid "App features appear only when the site is opened from the home screen. Add the class tkpwa-hide-in-app to any block to hide it there, or tkpwa-only-in-app to show it only there. The shortcode [tkpwa_install_button] adds an install button anywhere."
+msgstr ""
+
+#: admin/views/settings.php:172
+msgid "Offline and sharing"
+msgstr ""
+
+#: admin/views/settings.php:177
+msgid "Offline reading (automatic)"
+msgstr ""
+
+#: admin/views/settings.php:178
+msgid "Pages visitors have opened stay readable without a connection. Logged-in views, the admin, carts and checkouts are never stored."
+msgstr ""
+
+#: admin/views/settings.php:184
+msgid "Offline forms"
+msgstr ""
+
+#. translators: %s: comma-separated plugin names
+#: admin/views/settings.php:187
+#, php-format
+msgid "Messages submitted without a connection are kept and sent once it returns. Works with %s."
+msgstr ""
+
+#: admin/views/settings.php:188
+msgid "Needs Contact Form 7, WPForms or Gravity Forms. None is active."
+msgstr ""
+
+#: admin/views/settings.php:191
+msgid "Share to this site"
+msgstr ""
+
+#: admin/views/settings.php:191
+msgid "On Android, the installed app appears in the Share menu. Sharing a link or text starts a new draft post with it."
+msgstr ""
+
+#: admin/views/settings.php:197
+msgid "Advanced"
+msgstr ""
+
+#: admin/views/settings.php:200
+msgid "Menu for the app"
+msgstr ""
+
+#: admin/views/settings.php:203
+msgid "Automatic"
+msgstr ""
+
+#: admin/views/settings.php:208
+msgid "Used for the bottom bar and icon shortcuts. Automatic uses the menu in the \"App bottom bar\" location, then your main menu."
+msgstr ""
+
+#: admin/views/settings.php:212
+msgid "Never store offline"
+msgstr ""
+
+#: admin/views/settings.php:215
+msgid "One path per line. Pages starting with these paths always come from the network. Shop and account pages of WooCommerce and Easy Digital Downloads are already excluded."
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:62
+msgid "Settings"
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:100
+msgid "Choose app icon"
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:101
+msgid "Use this image"
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:127
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:149
+msgid "Takumi PWA is active. Your site can now be installed as an app - no setup needed."
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:151
+msgid "Check the status"
+msgstr ""
+
+#. translators: %s: comma-separated plugin names
+#: includes/class-tkpwa-admin.php:164
+#, php-format
+msgid "Takumi PWA: %s also adds a service worker. Only one can run on a site - deactivate one of them."
+msgstr ""
+
+#: includes/class-tkpwa-admin.php:173
+msgid "Checks run again and icons regenerated."
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:78
+msgid "Install"
+msgstr ""
+
+#. translators: %s: app name
+#: includes/class-tkpwa-frontend.php:80
+#, php-format
+msgid "Add %s to your home screen"
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:81
+msgid "Open it like an app, even with a weak connection."
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:82
+msgid "Tap the Share button"
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:83
+msgid "Choose \"Add to Home Screen\""
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:84
+msgid "Close"
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:86
+msgid "Release to refresh"
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:87
+msgid "You are offline. Your message has been saved and will be sent automatically when you are back online."
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:88
+msgid "Your saved message has been sent."
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:89
+msgid "You are offline. Messages with attachments cannot be saved; please try again when you are back online."
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:90
+msgid "Loading"
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:110
+msgid "App navigation"
+msgstr ""
+
+#: includes/class-tkpwa-frontend.php:133
+msgid "Install the app"
+msgstr ""
+
+#: includes/class-tkpwa-health.php:30
+#: includes/class-tkpwa-health.php:36
+msgid "Other PWA plugins"
+msgstr ""
+
+#. translators: %s: comma-separated plugin names
+#: includes/class-tkpwa-health.php:33
+#, php-format
+msgid "Deactivate %s. A site can run only one service worker, so two PWA or push notification plugins will break each other."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:38
+msgid "None found."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:44
+msgid "Form plugins"
+msgstr ""
+
+#. translators: %s: comma-separated plugin names
+#: includes/class-tkpwa-health.php:48
+#, php-format
+msgid "Offline sending is on for %s."
+msgstr ""
+
+#. translators: %s: comma-separated plugin names
+#: includes/class-tkpwa-health.php:50
+#, php-format
+msgid "Found %s. Turn on \"Offline forms\" below to keep messages sent without a connection."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:57
+msgid "Languages"
+msgstr ""
+
+#. translators: %s: Polylang or WPML
+#: includes/class-tkpwa-health.php:60
+#, php-format
+msgid "%s found. Each language gets its own manifest; translate the app name under its string translations."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:90
+msgid "The site is served over HTTPS."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:97
+msgid "Browsers allow apps on localhost without HTTPS, but your live site will need it."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:103
+msgid "The site address starts with http://. Browsers only install apps from https:// sites. Ask your host to enable a free SSL certificate, then change the site address under Settings > General."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:111
+msgid "App icon"
+msgstr ""
+
+#: includes/class-tkpwa-health.php:118
+msgid "Icons could not be generated. The GD image extension for PHP may be missing; ask your host."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:125
+msgid "A placeholder icon is in use. Choose an image below, or set a Site Icon, so the app shows your logo."
+msgstr ""
+
+#. translators: 1: width in pixels, 2: height in pixels
+#: includes/class-tkpwa-health.php:135
+#, php-format
+msgid "The icon image is %1$d x %2$d pixels and will look blurry when enlarged. Use one at least 512 x 512."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:142
+msgid "All sizes generated, including the Android adaptive icon and the iPhone icon."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:154
+msgid "Manifest and service worker"
+msgstr ""
+
+#: includes/class-tkpwa-health.php:176
+msgid "Both load correctly for visitors."
+msgstr ""
+
+#. translators: %s: error message
+#: includes/class-tkpwa-health.php:207
+#, php-format
+msgid "The site could not reach itself to check (%s). This is often a hosting firewall; the app may still work for visitors."
+msgstr ""
+
+#: includes/class-tkpwa-health.php:215
+msgid "Visitors who are not logged in are redirected away from the site (for example by a maintenance or private-site plugin), so they cannot install it."
+msgstr ""
+
+#. translators: %d: HTTP status code
+#: includes/class-tkpwa-health.php:220
+#, php-format
+msgid "The app files returned an unexpected response (HTTP %d). A caching or security plugin may be rewriting them."
+msgstr ""
+
+#: includes/class-tkpwa-menu.php:28
+msgid "App bottom bar (Takumi PWA)"
+msgstr ""
+
+#. translators: %s: menu name
+#: includes/class-tkpwa-menu.php:129
+#, php-format
+msgid "Menu \"%s\""
+msgstr ""
+
+#: includes/class-tkpwa-menu.php:132
+msgid "Site navigation block"
+msgstr ""
+
+#: includes/class-tkpwa-menu.php:215
+msgid "Home"
+msgstr ""
+
+#: includes/views/offline.php:51
+msgid "You are offline"
+msgstr ""
+
+#: includes/views/offline.php:52
+msgid "This page has not been saved for offline reading. Check your connection and try again."
+msgstr ""
+
+#: includes/views/offline.php:53
+msgid "Try again"
+msgstr ""
+
+#: includes/views/offline.php:55
+msgid "Available offline"
+msgstr ""
