@@ -262,7 +262,16 @@
 			if ( url.origin !== location.origin || ( url.pathname === location.pathname && url.search === location.search ) ) {
 				return;
 			}
-			overlayTimer = window.setTimeout( showOverlay, 250 );
+			// Decided again when the timer fires: a theme script that handles
+			// the link itself (a modal, an AJAX loader) may cancel the click
+			// after this listener has run, and then no page load follows.
+			overlayTimer = window.setTimeout( function () {
+				if ( ! event.defaultPrevented ) {
+					showOverlay();
+					// Never trap the visitor behind it if the load stalls.
+					overlayTimer = window.setTimeout( hideOverlay, 10000 );
+				}
+			}, 250 );
 		} );
 
 		// Coming back with the back button restores the page from memory
