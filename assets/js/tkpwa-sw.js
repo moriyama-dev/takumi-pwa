@@ -38,6 +38,18 @@
 					} ).catch( function () {} );
 				} ) );
 			} ).then( function () {
+				// The offline page's own stylesheet, script and icon, so it is
+				// styled and working when there is no network.
+				return caches.open( ASSETS ).then( function ( cache ) {
+					return Promise.all( CFG.precache.map( function ( url ) {
+						return fetch( url, { credentials: 'same-origin' } ).then( function ( response ) {
+							if ( isCacheable( response ) ) {
+								return cache.put( url, response );
+							}
+						} ).catch( function () {} );
+					} ) );
+				} );
+			} ).then( function () {
 				return self.skipWaiting();
 			} )
 		);
@@ -179,6 +191,13 @@
 		} );
 	}
 
+	// The offline page and its assets must survive trimming.
+	function isKept( href ) {
+		var url = new URL( href );
+		var path = url.pathname + url.search;
+		return path === CFG.offlineUrl || -1 !== CFG.precache.indexOf( path );
+	}
+
 	// Oldest entries go first; Cache keys come back in insertion order.
 	function trim( name, max ) {
 		return caches.open( name ).then( function ( cache ) {
@@ -186,7 +205,7 @@
 				var excess = keys.length - max;
 				var doomed = [];
 				for ( var i = 0; i < keys.length && doomed.length < excess; i++ ) {
-					if ( -1 === keys[ i ].url.indexOf( CFG.offlineUrl ) ) {
+					if ( ! isKept( keys[ i ].url ) ) {
 						doomed.push( cache.delete( keys[ i ] ) );
 					}
 				}

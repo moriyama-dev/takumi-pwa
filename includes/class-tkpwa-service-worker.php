@@ -83,6 +83,7 @@ class TKPwa_Service_Worker {
 			'version'    => TKPwa_Settings::fingerprint(),
 			'scope'      => self::scope(),
 			'offlineUrl' => self::relative( self::offline_url() ),
+			'precache'   => self::offline_asset_urls(),
 			'startUrl'   => self::relative( TKPwa_Integrations::home_url( '' ) ),
 			'bypass'     => strtolower( self::BYPASS_HEADER ),
 			'skipPaths'  => self::excluded_paths(),
@@ -136,14 +137,63 @@ class TKPwa_Service_Worker {
 	}
 
 	/**
-	 * A self-contained page: the theme is not loaded, so it renders the same
-	 * whatever the theme does, and it carries no external assets that would
-	 * themselves need the network.
+	 * Stylesheet and script of the offline page, by handle.
+	 *
+	 * @return array<string, string> Handle => URL without the version argument.
+	 */
+	private static function offline_assets() {
+		return array(
+			'style'  => TKPWA_PLUGIN_URL . 'assets/css/tkpwa-offline.css',
+			'script' => TKPWA_PLUGIN_URL . 'assets/js/tkpwa-offline.js',
+		);
+	}
+
+	/**
+	 * The offline page is shown when there is no network, so the worker must
+	 * already hold its stylesheet, script and icon. The stylesheet and script
+	 * URLs are exactly as WordPress prints them, version argument included,
+	 * so the cache matches.
+	 *
+	 * @return string[] Root-relative URLs. Assets served from another host
+	 *                  (a CDN) are left out; the worker only handles its own.
+	 */
+	private static function offline_asset_urls() {
+		$candidates = array();
+		foreach ( self::offline_assets() as $url ) {
+			$candidates[] = add_query_arg( 'ver', TKPWA_VERSION, $url );
+		}
+		$icons = TKPwa_Icons::urls();
+		if ( ! empty( $icons['any-192'] ) ) {
+			$candidates[] = $icons['any-192'];
+		}
+
+		$home = wp_parse_url( home_url( '/' ), PHP_URL_HOST );
+		$urls = array();
+		foreach ( $candidates as $url ) {
+			if ( wp_parse_url( $url, PHP_URL_HOST ) === $home ) {
+				$urls[] = self::relative( $url );
+			}
+		}
+		return $urls;
+	}
+
+	/**
+	 * A standalone page: the theme is not loaded, so it renders the same
+	 * whatever the theme does. Its own stylesheet and script are precached by
+	 * the worker at install, so the page works without the network.
 	 */
 	private static function serve_offline_page() {
 		status_header( 200 );
 		header( 'Content-Type: text/html; charset=utf-8' );
 		header( 'X-Robots-Tag: noindex' );
+
+		$assets = self::offline_assets();
+		wp_register_style( 'tkpwa-offline', $assets['style'], array(), TKPWA_VERSION );
+		$background = sanitize_hex_color( TKPwa_Settings::background_color() );
+		if ( $background ) {
+			wp_add_inline_style( 'tkpwa-offline', ':root { --bg: ' . $background . '; }' );
+		}
+		wp_register_script( 'tkpwa-offline', $assets['script'], array(), TKPWA_VERSION, true );
 
 		$icons = TKPwa_Icons::urls();
 		$data  = array(

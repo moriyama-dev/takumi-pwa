@@ -1,0 +1,27 @@
+/**
+ * Offline page. The page background (--bg) is added inline from settings.
+ */
+* { box-sizing: border-box; }
+body {
+	margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+	padding: 24px; background: var(--bg, #fff); color: #1d2327;
+	font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+main {
+	width: 100%; max-width: 420px; background: #fff; border-radius: 16px; padding: 32px 24px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.06); text-align: center;
+}
+img { width: 72px; height: 72px; border-radius: 16px; }
+h1 { font-size: 20px; margin: 16px 0 8px; }
+p { margin: 0 0 20px; color: #50575e; }
+button {
+	font: inherit; font-weight: 600; border: 0; border-radius: 999px; padding: 10px 24px; cursor: pointer;
+	background: #1d2327; color: #fff;
+}
+#tkpwa-cached { text-align: left; margin-top: 24px; }
+#tkpwa-cached h2 { font-size: 14px; color: #50575e; font-weight: 600; margin: 0 0 8px; }
+#tkpwa-cached ul { list-style: none; margin: 0; padding: 0; }
+#tkpwa-cached li a {
+	display: block; padding: 10px 0; border-top: 1px solid #e0e0e0; color: #1d2327; text-decoration: none;
+	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
