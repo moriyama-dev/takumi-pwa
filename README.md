@@ -4,6 +4,8 @@ A WordPress plugin that makes a site installable as a Progressive Web App with n
 
 On activation it reads the site title, Site Icon and theme colors and generates the web app manifest, the service worker and every icon size from them. The admin screen leads with a status checklist rather than a form, because on most sites there is nothing to fill in.
 
+![Takumi PWA settings: app features you can switch on, like the install banner, loading screen and icon shortcuts](docs/images/features.png)
+
 ## Features
 
 **Core**
